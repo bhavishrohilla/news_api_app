@@ -9,16 +9,22 @@
 </head>
 <body>
     <h1 class="text-center">News APP</h1>
-    <h2>Search By Country</h2>
+    <hr>
+    <h5>Search By Country</h5>
     <form action="" method="get">
         <input type="text" name="country">
         <button type="submit" value="search">Search</button>
     </form>
+    
+    <h5>Search By Category</h5>
+    <form action="" method="get">
+        <input type="text" name="category">
+        <button type="submit" value="search">Search</button>
+    </form>
 
-    <h2>Search By Category</h2>
-    <div class="container">
+    <div class="container col-md-6">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
 
                 {% for i in articles %}
 
@@ -37,8 +43,20 @@
 
                   {% endfor %}
             </div>
-            <div class="col-md-6">
-                Category
+            <div class="col-md-4">
+                <h3><b>Category</b></h3>
+                <hr>
+                <br>
+                <ul class="list-group">
+                    <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'home' %}?category=Health">Health</a></li>
+                    <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'home' %}?category=Science">Science</a></li>
+                    <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'home' %}?category=Entertainment">Entertainment</a></li>
+                    <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'home' %}?category=Sports">Sports</a></li>
+                    <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'home' %}?category=Technology">Technology</a></li>
+                    <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'home' %}?category=Business">Business</a></li>
+
+                    
+                </ul>
             </div>
         </div>
     </div>
